@@ -33,9 +33,8 @@ input {
 }
 
 .img {
-  width: 80vw;
+  width: 90vw;
   height: 80vh;
-  margin: 0 auto;
   transition: all .5s;
 }
 
@@ -52,12 +51,15 @@ img {
   font-size: 2rem;
 }
 
-span {
-  display: none;
+.text__wrapper {
+  height: 5vh;
+  overflow: hidden;
 }
 
-span.active {
+span {
   display: block;
+  height: 100%;
+  transition: .5s;
 }
 
 .buttons {
@@ -133,4 +135,28 @@ label:hover .btn {
 
 #six:checked~.images>.wrapper>.active {
   margin-top: -400vh;
+}
+
+#first:checked~.text>.text__wrapper>.active {
+  margin-top: 0;
+}
+
+#second:checked~.text>.text__wrapper>.active {
+  margin-top: -5vh;
+}
+
+#third:checked~.text>.text__wrapper>.active {
+  margin-top: -10vh;
+}
+
+#fourth:checked~.text>.text__wrapper>.active {
+  margin-top: -15vh;
+}
+
+#fifth:checked~.text>.text__wrapper>.active {
+  margin-top: -20vh;
+}
+
+#six:checked~.text>.text__wrapper>.active {
+  margin-top: -25vh;
 }
