@@ -86,7 +86,11 @@ label {
 }
 
 label:hover .btn {
-  background-color: red;
+  background-color: yellow;
+}
+
+label:active .btn {
+  background-color: blueviolet;
 }
 
 #first:checked~.buttons>label:nth-of-type(1) .btn {
@@ -159,4 +163,22 @@ label:hover .btn {
 
 #six:checked~.text>.text__wrapper>.active {
   margin-top: -25vh;
+}
+
+@media screen and (max-width: 390px) {
+  .container {
+    grid-template-areas:
+      'a'
+      'c'
+      'b';
+    gap: 2rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
 }
