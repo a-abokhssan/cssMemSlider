@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: darkslategray;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "a a a"
+    "b b c";
+  width: 90vw;
+  height: 90vh;
+  margin: 5% auto 0;
+}
+
+input {
+  display: none;
+}
+
+.images {
+  grid-area: a;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.wrapper {
+  height: 600%;
+}
+
+.img {
+  width: 90vw;
+  height: 80vh;
+  transition: all .5s;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.text {
+  grid-area: b;
+  display: flex;
+  justify-content: flex-start;
+  color: red;
+  font-size: 2rem;
+}
+
+.text__wrapper {
+  height: 5vh;
+  overflow: hidden;
+}
+
+span {
+  display: block;
+  height: 100%;
+  transition: .5s;
+}
+
+.buttons {
+  grid-area: c;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+label {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  border: 0.15rem solid red;
+  transition: all .3s;
+}
+
+label:hover .btn {
+  background-color: yellow;
+}
+
+label:active .btn {
+  background-color: blueviolet;
+}
+
+#first:checked~.buttons>label:nth-of-type(1) .btn {
+  background-color: red;
+}
+
+#second:checked~.buttons>label:nth-of-type(2) .btn {
+  background-color: red;
+}
+
+#third:checked~.buttons>label:nth-of-type(3) .btn {
+  background-color: red;
+}
+
+#fourth:checked~.buttons>label:nth-of-type(4) .btn {
+  background-color: red;
+}
+
+#fifth:checked~.buttons>label:nth-of-type(5) .btn {
+  background-color: red;
+}
+
+#six:checked~.buttons>label:nth-of-type(6) .btn {
+  background-color: red;
+}
+
+#first:checked~.images>.wrapper>.active {
+  margin-top: 0;
+}
+
+#second:checked~.images>.wrapper>.active {
+  margin-top: -80vh;
+}
+
+#third:checked~.images>.wrapper>.active {
+  margin-top: -160vh;
+}
+
+#fourth:checked~.images>.wrapper>.active {
+  margin-top: -240vh;
+}
+
+#fifth:checked~.images>.wrapper>.active {
+  margin-top: -320vh;
+}
+
+#six:checked~.images>.wrapper>.active {
+  margin-top: -400vh;
+}
+
+#first:checked~.text>.text__wrapper>.active {
+  margin-top: 0;
+}
+
+#second:checked~.text>.text__wrapper>.active {
+  margin-top: -5vh;
+}
+
+#third:checked~.text>.text__wrapper>.active {
+  margin-top: -10vh;
+}
+
+#fourth:checked~.text>.text__wrapper>.active {
+  margin-top: -15vh;
+}
+
+#fifth:checked~.text>.text__wrapper>.active {
+  margin-top: -20vh;
+}
+
+#six:checked~.text>.text__wrapper>.active {
+  margin-top: -25vh;
+}
+
+@media screen and (max-width: 390px) {
+  .container {
+    grid-template-areas:
+      'a'
+      'c'
+      'b';
+    gap: 2rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+}
